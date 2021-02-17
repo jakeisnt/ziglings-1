@@ -29,6 +29,6 @@ pub fn main() void {
 // We're just missing a couple things. One thing we're NOT missing is the
 // keyword "pub", which is not needed here. Can you guess why?
 //
-??? deepThought() ??? {
+fn deepThought() u8 {
     return 42; // Number courtesy Douglas Adams
 }
