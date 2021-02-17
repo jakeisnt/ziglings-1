@@ -8,7 +8,7 @@
 //
 const std = @import("std");
 
-const MyNumberError = error{ TooSmall };
+const MyNumberError = error{TooSmall};
 
 pub fn main() void {
     var a: u32 = addTwenty(44) catch 22;

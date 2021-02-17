@@ -24,7 +24,7 @@
 //     const bar: u16 = 2000;
 //
 // You can do just about any combination of these that you can think of:
-// 
+//
 //     u32 can hold 0 to 4,294,967,295
 //     i64 can hold −9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 //

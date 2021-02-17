@@ -240,7 +240,11 @@ const exercises = [_]Exercise{
         .main_file = "45_optionals.zig",
         .output = "The Ultimate Answer: 42.",
     },
-    // optional fields (elephant tail - no longer need circular)
+    .{
+        .main_file = "46_optionals2.zig",
+        .output = "Elephant A. Elephant B. Elephant C.",
+        .hint = "Elephants!",
+    },
     // super-simple struct method
     // use struct method for elephant tails
     // quiz: add elephant trunk (like tail)!
@@ -273,13 +277,15 @@ pub fn build(b: *Builder) void {
         stderrPrintFn(
             \\ERROR: Sorry, it looks like your version of zig is too old. :-(
             \\
-            \\The README lists the minimum version and build number.
+            \\Ziglings requires development build
             \\
-            \\Please download a master build from
+            \\    0.8.0-dev.1065
+            \\
+            \\or higher. Please download a development ("master") build from
             \\https://ziglang.org/download/
             \\
         , .{});
-        return;
+        std.os.exit(0);
     }
 
     use_color_escapes = false;
