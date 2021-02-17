@@ -9,7 +9,7 @@ const std = @import("std"); // single quotes
 
 const Elephant = struct {
     letter: u8,
-    tail: *Elephant = undefined, // <---- make this optional!
+    tail: ?*Elephant = undefined, // <---- make this optional!
     visited: bool = false,
 };
 
@@ -39,7 +39,7 @@ fn visitElephants(first_elephant: *Elephant) void {
         // We should stop once we encounter a tail that
         // does NOT point to another element. What can
         // we put here to make that happen?
-        if (e.tail == null) ???;
+        if (e.tail == null) break;
 
         e = e.tail.?;
     }
