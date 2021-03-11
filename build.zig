@@ -40,7 +40,7 @@ const exercises = [_]Exercise{
     .{
         .main_file = "01_hello.zig",
         .output = "Hello world",
-        .hint = "Note the error: the source file has a hint for fixing 'main'.",
+        .hint = "DON'T PANIC!\nRead the error above.\nSee how it has something to do with 'main'?\nOpen up the source file as noted and read the comments.\nYou can do this!",
     },
     .{
         .main_file = "02_std.zig",
@@ -243,11 +243,51 @@ const exercises = [_]Exercise{
     .{
         .main_file = "46_optionals2.zig",
         .output = "Elephant A. Elephant B. Elephant C.",
-        .hint = "Elephants!",
+        .hint = "Elephants again!",
     },
-    // super-simple struct method
-    // use struct method for elephant tails
-    // quiz: add elephant trunk (like tail)!
+    .{
+        .main_file = "47_methods.zig",
+        .output = "5 aliens. 4 aliens. 1 aliens. 0 aliens. Earth is saved!",
+        .hint = "Use the heat ray. And the method!",
+    },
+    .{
+        .main_file = "48_methods2.zig",
+        .output = "A  B  C",
+        .hint = "This just needs one little fix.",
+    },
+    .{
+        .main_file = "49_quiz6.zig",
+        .output = "A  B  C  Cv Bv Av",
+        .hint = "Now you're writting Zig!",
+    },
+    .{
+        .main_file = "50_no_value.zig",
+        .output = "That is not dead which can eternal lie / And with strange aeons even death may die.",
+    },
+    .{
+        .main_file = "51_values.zig",
+        .output = "1:false!. 2:true!. 3:true!. XP before:0, after:200.",
+    },
+    .{
+        .main_file = "52_slices.zig",
+        .output = "Hand1: A 4 K 8 Hand2: 5 2 Q J",
+    },
+    .{
+        .main_file = "53_slices2.zig",
+        .output = "'all your base are belong to us.' 'for great justice.'",
+    },
+    .{
+        .main_file = "54_manypointers.zig",
+        .output = "Memory is a resource.",
+    },
+    .{
+        .main_file = "55_unions.zig",
+        .output = "Insect report! Ant alive is: true. Bee visited 15 flowers.",
+    },
+    .{
+        .main_file = "56_unions2.zig",
+        .output = "Insect report! Ant alive is: true. Bee visited 16 flowers.",
+    },
 };
 
 /// Check the zig version to make sure it can compile the examples properly.
@@ -327,7 +367,7 @@ pub fn build(b: *Builder) void {
         \\         _       _ _
         \\     ___(_) __ _| (_)_ __   __ _ ___
         \\    |_  | |/ _' | | | '_ \ / _' / __|
-        \\     / /| | (_| | | | | | | (_| \__ \ 
+        \\     / /| | (_| | | | | | | (_| \__ \
         \\    /___|_|\__, |_|_|_| |_|\__, |___/
         \\           |___/           |___/
         \\
@@ -504,7 +544,7 @@ const ZiglingStep = struct {
             zig_args.append(@tagName(builder.color)) catch unreachable;
         }
 
-        const zig_file = std.fs.path.join(builder.allocator, &[_][]const u8{ 
+        const zig_file = std.fs.path.join(builder.allocator, &[_][]const u8{
             if (self.use_healed) "patches/healed" else "exercises", self.exercise.main_file }) catch unreachable;
         zig_args.append(builder.pathFromRoot(zig_file)) catch unreachable;
 
