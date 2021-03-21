@@ -30,12 +30,11 @@ pub fn main() void {
     // as we can CONVERT IT TO A SLICE. (Hint: we do know the length!)
     //
     // Please fix this line so the print below statement can print it:
-    const zen12_string: []const u8 = zen_manyptr;
+    const zen12_string: []const u8 = zen_manyptr[0..21];
 
     // Here's the moment of truth!
     std.debug.print("{s}\n", .{zen12_string});
 }
-//
 // Are all of these pointer types starting to get confusing?
 //
 //     FREE ZIG POINTER CHEATSHEET! (Using u8 as the example type.)
