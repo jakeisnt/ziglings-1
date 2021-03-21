@@ -12,22 +12,24 @@
 const std = @import("std");
 
 pub fn main() void {
-    // Take a good look at the type of the zen12 string:
+    // Take a good look at the array type to which we're coercing
+    // the zen12 string (the REAL nature of strings will be
+    // revealed when we've learned some additional features):
     const zen12: *const [21]u8 = "Memory is a resource.";
-    // It would also have been valid to coerce this to a slice:
     //
-    //     const zen12: []const u8 = "...";
+    //   It would also have been valid to coerce to a slice:
+    //         const zen12: []const u8 = "...";
     //
-    // Now let's turn this into a "many pointer":
+    // Now let's turn this into a "many-item pointer":
     const zen_manyptr: [*]const u8 = zen12;
 
     // It's okay to access zen_manyptr just like an array or slice as
     // long as you keep track of the length yourself!
     //
     // A "string" in Zig is a pointer to an array of const u8 values
-    // or a slice of const u8 values, into one, as we saw above). So,
-    // we could treat a "many pointer" of const u8 a string as long
-    // as we can CONVERT IT TO A SLICE. (Hint: we do know the length!)
+    // (or a slice of const u8 values, as we saw above). So, we could
+    // treat a "many-item pointer" of const u8 as a string as long as
+    // we can CONVERT IT TO A SLICE. (Hint: we do know the length!)
     //
     // Please fix this line so the print below statement can print it:
     const zen12_string: []const u8 = zen_manyptr[0..21];
