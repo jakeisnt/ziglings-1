@@ -32,7 +32,7 @@ pub fn main() void {
 
     // Please put the first 4 cards in hand1 and the rest in hand2.
     const hand1: []u8 = cards[0..4];
-    const hand2: []u8 = cards[5..];
+    const hand2: []u8 = cards[4..];
 
     std.debug.print("Hand1: ", .{});
     printHand(hand1);
