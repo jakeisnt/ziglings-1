@@ -21,7 +21,7 @@ pub fn main() void {
     var n: u32 = 2;
 
     // Please use a condition that is true UNTIL "n" reaches 1024:
-    while (n < 1024) {
+    while (???) {
         // Print the current number
         std.debug.print("{} ", .{n});
 

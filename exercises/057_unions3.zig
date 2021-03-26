@@ -15,7 +15,7 @@
 //
 const std = @import("std");
 
-const Insect = union(enum) {
+const Insect = union(InsectStat) {
     flowers_visited: u16,
     still_alive: bool,
 };

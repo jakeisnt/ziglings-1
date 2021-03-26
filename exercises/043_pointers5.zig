@@ -57,7 +57,7 @@ pub fn main() void {
 
     // FIX ME!
     // Please pass our Character "glorp" to printCharacter():
-    printCharacter(&glorp);
+    printCharacter(???);
 }
 
 // Note how this function's "c" parameter is a pointer to a Character struct.

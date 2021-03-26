@@ -46,7 +46,6 @@ pub fn main() void {
             // match for every possible value).  Please add an "else"
             // to this switch to print a question mark "?" when c is
             // not one of the existing matches.
-            else => std.debug.print("?", .{}),
         }
     }
 

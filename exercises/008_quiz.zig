@@ -13,7 +13,7 @@ pub fn main() void {
     // What is this nonsense? :-)
     const letters = "YZhifg";
 
-    var x: u8 = 1;
+    const x: u8 = 1;
 
     // This is something you haven't seen before: declaring an array
     // without putting anything in it. There is no error here:
@@ -24,10 +24,10 @@ pub fn main() void {
     lang[0] = letters[x];
 
     x = 3;
-    lang[1] = letters[x];
+    lang[???] = letters[x];
 
-    x = letters.len - 1;
-    lang[2] = letters[x];
+    x = ???;
+    lang[2] = letters[???];
 
     // We want to "Program in Zig!" of course:
     std.debug.print("Program in {s}!\n", .{lang});
